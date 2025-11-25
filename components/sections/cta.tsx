@@ -24,13 +24,17 @@ export function CTASection() {
             and discover how we can help your business thrive in the digital world.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button className="group inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-white px-10 text-base font-semibold text-purple-600 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl sm:w-auto">
-              Start Your Project
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-            <button className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full border-2 border-white bg-transparent px-10 text-base font-semibold text-white transition-all duration-300 hover:bg-white hover:text-purple-600 sm:w-auto">
-              Contact Us
-            </button>
+            <Button asChild size="lg" className="group h-14 w-full bg-white px-10 text-base font-semibold text-purple-600 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl sm:w-auto">
+              <Link href="/contact">
+                Start Your Project
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="h-14 w-full border-2 border-white bg-transparent px-10 text-base font-semibold text-white transition-all duration-300 hover:bg-white hover:text-purple-600 sm:w-auto">
+              <Link href="/contact">
+                Contact Us
+              </Link>
+            </Button>
           </div>
           </div>
           

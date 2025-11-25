@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { 
   Menu, 
   X, 
@@ -22,8 +23,9 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { MobileMenu } from "@/components/mobile-menu"
 
-const servicesData = [
+export const servicesData = [
   {
     category: "SEO Services",
     items: [
@@ -176,15 +178,18 @@ export function Header() {
       isVisible ? "translate-y-0" : "-translate-y-full"
     )}>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="mx-auto mt-4 flex h-16 items-center rounded-full bg-white/95 px-6 shadow-lg backdrop-blur-3xl transition-all duration-300 hover:shadow-xl dark:bg-gray-900/95" style={{backdropFilter: 'blur(64px) saturate(180%)', WebkitBackdropFilter: 'blur(64px) saturate(180%)'}}>
+        <nav className="mx-auto mt-4 flex h-20 items-center rounded-full bg-white/95 px-6 shadow-lg backdrop-blur-3xl transition-all duration-300 hover:shadow-xl dark:bg-gray-900/95" style={{backdropFilter: 'blur(64px) saturate(180%)', WebkitBackdropFilter: 'blur(64px) saturate(180%)'}}>
           {/* Logo - Left */}
-          <Link href="/" className="group flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 shadow-lg">
-              <span className="text-xl font-bold text-white">M</span>
+          <Link href="/" className="group flex items-center space-x-2.5 transition-transform duration-300 hover:scale-105">
+            <div className="relative h-14 w-14 flex-shrink-0">
+              <Image 
+                src="/logo.webp" 
+                alt="The Meta Studio Logo" 
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
-            <span className="hidden text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent xl:block">
-              The Meta Studio
-            </span>
           </Link>
 
           {/* Center Navigation */}
@@ -285,169 +290,32 @@ export function Header() {
             <Link href="/about" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-accent">
               About
             </Link>
-            <Link href="/our-work" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-accent">
-              Our Work
+            <Link href="/#services" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-accent">
+              Portfolio
             </Link>
-            <Link href="/blogs" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-accent">
-              Blogs
+            <Link href="/contact" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-accent">
+              Contact
             </Link>
           </div>
 
           {/* Right Actions */}
           <div className="hidden items-center gap-3 lg:flex">
-            <Button asChild variant="ghost" className="rounded-full">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-            <Button asChild size="default" className="group">
-              <Link href="/get-started">
-                GET Started
+            <a href="tel:+1234567890" className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <Phone className="h-4 w-4" />
+              <span className="hidden xl:inline">+1 (555) 123-4567</span>
+            </a>
+            <Button asChild size="default" className="group rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
+              <Link href="/contact">
+                Get Free Quote
                 <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            className="ml-auto lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          {/* Mobile Menu Toggle - New Component */}
+          <MobileMenu />
         </nav>
       </div>
-
-      {/* Mobile Offcanvas Menu */}
-      {mobileMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <div 
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden z-40 animate-in fade-in duration-300"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          
-          {/* Offcanvas Sidebar */}
-          <aside className="fixed inset-y-0 right-0 z-50 w-80 transform bg-white shadow-2xl transition-transform duration-300 ease-in-out dark:bg-gray-900 lg:hidden border-l border-gray-200 dark:border-gray-800">
-            <div className="flex h-screen flex-col">
-              {/* Offcanvas Header - Fixed */}
-              <div className="flex flex-shrink-0 items-center justify-between border-b border-gray-200 bg-white px-4 py-4 dark:border-gray-800 dark:bg-gray-900">
-                <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 shadow-lg">
-                    <span className="text-xl font-bold text-white">M</span>
-                  </div>
-                  <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                    The Meta Studio
-                  </span>
-                </Link>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-white"
-                  aria-label="Close menu"
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-
-              {/* Scrollable Content Area */}
-              <div className="flex-1 overflow-y-auto overscroll-contain">
-                <div className="px-4 py-6">
-                  {/* Main Navigation */}
-                  <nav className="mb-8">
-                    <h2 className="mb-3 px-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                      Navigation
-                    </h2>
-                    <div className="space-y-1">
-                      <Link
-                        href="/"
-                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Home
-                      </Link>
-                      <Link
-                        href="/about"
-                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        About
-                      </Link>
-                      <Link
-                        href="/our-work"
-                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Our Work
-                      </Link>
-                      <Link
-                        href="/blogs"
-                        className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Blogs
-                      </Link>
-                    </div>
-                  </nav>
-
-                  {/* Services Section */}
-                  <div className="mb-8">
-                    <h2 className="mb-3 px-2 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                      Our Services
-                    </h2>
-                    <div className="space-y-6">
-                      {servicesData.map((category) => (
-                        <div key={category.category}>
-                          <h3 className="mb-2 px-2 text-xs font-bold uppercase tracking-wide text-purple-600 dark:text-purple-400">
-                            {category.category}
-                          </h3>
-                          <div className="space-y-1">
-                            {category.items.map((item) => {
-                              const Icon = item.icon
-                              return (
-                                <Link
-                                  key={item.title}
-                                  href={item.href}
-                                  className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-purple-50 hover:text-purple-600 dark:text-gray-300 dark:hover:bg-purple-900/20 dark:hover:text-purple-400"
-                                  onClick={() => setMobileMenuOpen(false)}
-                                >
-                                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-purple-600 to-indigo-600 shadow-sm">
-                                    <Icon className="h-4 w-4 text-white" />
-                                  </div>
-                                  <span>{item.title}</span>
-                                </Link>
-                              )
-                            })}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Footer Buttons Inside Scroll Area */}
-                  <div className="pb-6">
-                    <div className="flex flex-col gap-3">
-                      <Button asChild variant="outline" className="w-full h-11 rounded-full">
-                        <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                          Contact Us
-                        </Link>
-                      </Button>
-                      <Button asChild className="w-full h-11 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
-                        <Link href="/get-started" onClick={() => setMobileMenuOpen(false)}>
-                          GET Started
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </>
-      )}
     </header>
   )
 }

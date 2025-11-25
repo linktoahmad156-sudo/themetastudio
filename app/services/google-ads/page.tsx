@@ -1,18 +1,59 @@
 import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Breadcrumb } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowRight, Target, BarChart, Users, Search, TrendingUp, Lightbulb } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: 'Google Ads Management',
-  description: 'Expert Google Ads management services that connect your brand with customers actively searching for your products, delivering measurable ROI through data-driven campaigns.',
+  title: 'Google Ads Management Services - Expert PPC Agency | 200% ROI Increase',
+  description: 'Professional Google Ads management that delivers results. Achieve 200% ROI increase with expert PPC campaigns. Certified Google Ads specialists, advanced targeting, conversion optimization. Get more leads for less cost. Free PPC audit available.',
+  keywords: [
+    'Google Ads',
+    'PPC services',
+    'pay per click',
+    'Google Ads management',
+    'PPC agency',
+    'Google advertising',
+    'search ads',
+    'display ads',
+    'shopping ads',
+    'YouTube ads',
+    'PPC campaign management',
+    'Google Ads expert',
+    'PPC optimization',
+    'Google Ads consultant',
+    'paid search advertising',
+    'PPC management company',
+    'Google Ads agency',
+    'conversion rate optimization',
+    'ROI optimization',
+    'cost per click'
+  ],
+  authors: [{ name: 'The Meta Studio' }],
+  creator: 'The Meta Studio',
+  publisher: 'The Meta Studio',
+  metadataBase: new URL('https://themetastudio.com'),
+  alternates: {
+    canonical: '/services/google-ads',
+  },
   openGraph: {
-    title: 'Google Ads Management | The Meta Studio',
-    description: 'Connect with customers at the perfect moment through expert Google Ads management.',
-    images: ['/services/google-ads/opengraph-image'],
+    title: 'Google Ads Management Services - 200% ROI Increase | The Meta Studio',
+    description: 'Expert Google Ads management with proven 200% ROI increase. Certified PPC specialists deliver more leads for less cost.',
+    url: 'https://themetastudio.com/services/google-ads',
+    siteName: 'The Meta Studio',
+    images: [
+      {
+        url: '/og-google-ads.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Google Ads Management Services - PPC Agency',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
@@ -59,35 +100,24 @@ export default function GoogleAdsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
+      
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-indigo-50 to-background py-20 dark:from-indigo-950/20 sm:py-28 lg:py-32">
+        {/* Modern Hero Section */}
+        <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-20 bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-gray-950 dark:via-gray-900 dark:to-purple-950/20">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Google Ads{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  Management
-                </span>
+            <div className="mx-auto max-w-4xl text-center">
+              {/* Breadcrumb */}
+              <Breadcrumb 
+                items={[
+                  { label: "Services", href: "/#services" },
+                  { label: "Google Ads (PPC)" }
+                ]} 
+              />
+              
+              {/* Page Title */}
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                Google Ads Management
               </h1>
-              <p className="mb-10 text-lg text-muted-foreground sm:text-xl">
-                The Meta Studio harnesses the power of Google Ads to grow your brand strategically. 
-                Our specialists utilize advertising expertise to expand your digital presence, creating 
-                compelling campaigns that deliver exceptional results and measurable ROI.
-              </p>
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button asChild size="lg">
-                  <Link href="/contact">
-                    Launch Your Campaign
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/portfolio">
-                    Success Stories
-                  </Link>
-                </Button>
-              </div>
             </div>
           </div>
         </section>
@@ -108,7 +138,7 @@ export default function GoogleAdsPage() {
                 </p>
                 <p>
                   This strategic approach significantly enhances the probability of clicks, leads, and sales. 
-                  With precise audience targeting, you're not merely reaching anyone—you're connecting with 
+                  With precise audience targeting, you're not merely reaching anyoneyou're connecting with 
                   individuals genuinely interested in your offerings. Google Ads empowers your business to 
                   establish a significant digital presence and generate tangible returns on your marketing 
                   investment.

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 const navigation = {
@@ -39,12 +40,20 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
-      <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-8 lg:grid-cols-5">
+    <footer className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
+      <div className="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="grid gap-12 lg:grid-cols-5">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="relative h-12 w-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                <Image 
+                  src="/logo.webp" 
+                  alt="The Meta Studio Logo" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                 The Meta Studio
               </span>
@@ -157,7 +166,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t pt-8">
+        <div className="mt-16 pt-8">
           <p className="text-center text-sm text-muted-foreground">
             © {new Date().getFullYear()} The Meta Studio. All rights reserved.
           </p>

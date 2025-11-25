@@ -26,12 +26,12 @@ const values = [
 
 export function AboutSection() {
   return (
-    <section className="relative py-20 sm:py-24 lg:py-28">
+    <section className="relative bg-white dark:bg-gray-950 py-20 sm:py-24 lg:py-28">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 px-6 py-3 shadow-lg dark:from-purple-900/30 dark:to-indigo-900/30">
-            <Award className="h-4 w-4 text-purple-600" />
-            <span className="text-sm font-semibold text-purple-900 dark:text-purple-100">About Us</span>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50/50 px-5 py-2 backdrop-blur-sm dark:border-purple-900/30 dark:bg-purple-900/10">
+            <Award className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+            <span className="text-sm font-medium text-purple-900 dark:text-purple-200">About Us</span>
           </div>
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Digital Agency Transforming Businesses
@@ -48,13 +48,13 @@ export function AboutSection() {
           {values.map((value) => {
             const Icon = value.icon
             return (
-              <Card key={value.title} className="group relative overflow-hidden bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 dark:bg-gray-800/80">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <Card key={value.title} className="group relative overflow-hidden border border-gray-200 bg-white transition-all duration-500 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-purple-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-indigo-50 opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-purple-900/10 dark:to-indigo-900/10"></div>
                 <CardHeader className="relative">
-                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-7 w-7 text-white" />
+                  <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl">
+                    <Icon className="h-7 w-7 text-white transition-transform duration-500 group-hover:scale-110" />
                   </div>
-                  <CardTitle className="text-xl font-bold">{value.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold transition-colors duration-300 group-hover:text-purple-600">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="relative">
                   <CardDescription className="text-base leading-relaxed">

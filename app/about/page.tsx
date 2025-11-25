@@ -1,16 +1,65 @@
 import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Breadcrumb } from "@/components/ui/breadcrumb"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Award, Users, Target, Lightbulb, TrendingUp, Heart, Zap, Shield } from "lucide-react"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about The Meta Studio - a passionate team of digital innovators dedicated to transforming businesses through strategic solutions and creative excellence.',
+  title: 'About Us - Expert Digital Marketing Team | The Meta Studio',
+  description: 'Meet The Meta Studio team - award-winning digital marketing experts with 10+ years of experience. We deliver data-driven strategies that achieve 150% ROI increase. Learn about our mission, values, and proven track record.',
+  keywords: [
+    'digital marketing agency team',
+    'marketing experts',
+    'SEO specialists',
+    'PPC experts',
+    'social media marketing team',
+    'about digital marketing agency',
+    'marketing consultants',
+    'digital marketing professionals',
+    'experienced marketing team',
+    'certified marketing experts'
+  ],
+  authors: [{ name: 'The Meta Studio' }],
+  creator: 'The Meta Studio',
+  publisher: 'The Meta Studio',
+  metadataBase: new URL('https://themetastudio.com'),
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
-    title: 'About Us | The Meta Studio',
-    description: 'Discover our mission, values, and the team behind your digital success.',
+    title: 'About Us - Expert Digital Marketing Team | The Meta Studio',
+    description: 'Award-winning digital marketing experts with proven track record. Data-driven strategies that deliver 150% ROI increase.',
+    url: 'https://themetastudio.com/about',
+    siteName: 'The Meta Studio',
+    images: [
+      {
+        url: '/og-about.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'The Meta Studio Team - Digital Marketing Experts',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About The Meta Studio - Digital Marketing Experts',
+    description: 'Award-winning team delivering data-driven marketing strategies with proven 150% ROI increase.',
+    images: ['/twitter-about.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
@@ -88,32 +137,20 @@ export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 pt-24">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-purple-50/50 to-background py-20 dark:from-purple-950/20 sm:py-28 lg:py-32">
+      
+      <main className="flex-1">
+        {/* Modern Hero Section */}
+        <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-950 dark:via-gray-900 dark:to-indigo-950/20">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 px-6 py-3 shadow-lg dark:from-purple-900/30 dark:to-indigo-900/30">
-                <Users className="h-4 w-4 text-purple-600" />
-                <span className="text-sm font-semibold text-purple-900 dark:text-purple-100">Our Story</span>
-              </div>
-              <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                We Are{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  The Meta Studio
-                </span>
+            <div className="mx-auto max-w-4xl text-center">
+              {/* Breadcrumb */}
+              <Breadcrumb items={[{ label: "About Us" }]} />
+              
+              {/* Page Title */}
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                About Us
               </h1>
-              <p className="text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                A passionate team of digital innovators, strategists, and creatives united by one mission: 
-                transforming businesses through the power of digital excellence.
-              </p>
             </div>
-          </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute left-[20%] top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 blur-3xl" />
-            <div className="absolute right-[10%] bottom-0 h-[400px] w-[400px] rounded-full bg-gradient-to-l from-pink-500/15 to-purple-500/15 blur-3xl" />
           </div>
         </section>
 
@@ -121,7 +158,7 @@ export default function AboutPage() {
         <section className="py-20 sm:py-24 lg:py-28">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-              <Card className="group bg-white/80 backdrop-blur-sm p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <Card className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                 <CardHeader className="p-0 pb-6">
                   <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 shadow-lg">
                     <Target className="h-8 w-8 text-white" />
@@ -140,7 +177,7 @@ export default function AboutPage() {
                 </CardContent>
               </Card>
 
-              <Card className="group bg-white/80 backdrop-blur-sm p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <Card className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                 <CardHeader className="p-0 pb-6">
                   <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 shadow-lg">
                     <Lightbulb className="h-8 w-8 text-white" />
@@ -180,7 +217,7 @@ export default function AboutPage() {
                 return (
                   <Card 
                     key={value.title} 
-                    className="group bg-white/80 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                    className="group bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <CardHeader>
@@ -205,25 +242,25 @@ export default function AboutPage() {
         <section className="py-20 sm:py-24 lg:py-28">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              <Card className="bg-white/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="mb-4 text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   10+
                 </div>
                 <p className="text-sm font-semibold text-muted-foreground">Years of Excellence</p>
               </Card>
-              <Card className="bg-white/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="mb-4 text-5xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   100+
                 </div>
                 <p className="text-sm font-semibold text-muted-foreground">Projects Delivered</p>
               </Card>
-              <Card className="bg-white/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="mb-4 text-5xl font-extrabold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
                   50+
                 </div>
                 <p className="text-sm font-semibold text-muted-foreground">Happy Clients</p>
               </Card>
-              <Card className="bg-white/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="mb-4 text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                   12+
                 </div>

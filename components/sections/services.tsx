@@ -58,12 +58,12 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="bg-gradient-to-b from-background to-secondary/30 py-20 sm:py-24 lg:py-28">
+    <section className="bg-gradient-to-b from-white via-gray-50/30 to-white dark:from-gray-950 dark:via-gray-900/30 dark:to-gray-950 py-20 sm:py-24 lg:py-28" id="services">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 px-6 py-3 shadow-lg dark:from-purple-900/30 dark:to-indigo-900/30">
-            <Sparkles className="h-4 w-4 text-purple-600" />
-            <span className="text-sm font-semibold text-purple-900 dark:text-purple-100">What We Offer</span>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50/50 px-5 py-2 backdrop-blur-sm dark:border-purple-900/30 dark:bg-purple-900/10">
+            <Sparkles className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+            <span className="text-sm font-medium text-purple-900 dark:text-purple-200">Our Services</span>
           </div>
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Our Offered Services
@@ -79,41 +79,40 @@ export function ServicesSection() {
           {services.map((service) => {
             const Icon = service.icon
             return (
-              <Card 
-                key={service.title} 
-                className="group relative overflow-hidden bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 dark:bg-gray-800/80"
+              <Link 
+                key={service.title}
+                href={service.href}
+                className="group block"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                <CardHeader className="relative">
-                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="relative">
-                  <ul className="mb-6 space-y-2">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-muted-foreground">
-                        <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    asChild 
-                    variant="ghost" 
-                    className="group/btn mt-2 w-full justify-between rounded-xl transition-all duration-300 hover:bg-purple-50 dark:hover:bg-purple-900/20"
-                  >
-                    <Link href={service.href}>
-                      Learn More
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                <Card 
+                  className="relative h-full overflow-hidden border border-gray-200 bg-white transition-all duration-300 hover:border-purple-300 hover:shadow-xl hover:-translate-y-1 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-purple-700 cursor-pointer"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-indigo-600/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <CardHeader className="relative">
+                    <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
+                    <CardDescription className="text-base">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="relative">
+                    <ul className="mb-6 space-y-2">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-center text-sm text-muted-foreground">
+                          <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-2 flex w-full items-center justify-between rounded-xl px-4 py-2 text-sm font-medium transition-all duration-300 group-hover:bg-purple-50 dark:group-hover:bg-purple-900/20">
+                      <span>Learn More</span>
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             )
           })}
         </div>

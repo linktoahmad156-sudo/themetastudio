@@ -1,18 +1,59 @@
 import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Breadcrumb } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowRight, Share2, Heart, MessageCircle, TrendingUp, Users, BarChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: 'Social Media Marketing',
-  description: 'Engaging social media strategies that build brand recognition, foster community, and drive meaningful customer interactions across all major platforms.',
+  title: 'Social Media Marketing Services - Instagram, Facebook, LinkedIn | 300% Engagement',
+  description: 'Expert social media marketing services that grow your brand. Achieve 300% increase in engagement with strategic content, community management, and influencer marketing. Facebook, Instagram, LinkedIn, Twitter, TikTok. Get more followers and sales.',
+  keywords: [
+    'social media marketing',
+    'social media management',
+    'Facebook marketing',
+    'Instagram marketing',
+    'LinkedIn marketing',
+    'Twitter marketing',
+    'TikTok marketing',
+    'social media advertising',
+    'content creation',
+    'community management',
+    'influencer marketing',
+    'social media strategy',
+    'brand awareness',
+    'engagement optimization',
+    'social media agency',
+    'social media consultant',
+    'organic social media',
+    'paid social advertising',
+    'social media ROI',
+    'social media campaigns'
+  ],
+  authors: [{ name: 'The Meta Studio' }],
+  creator: 'The Meta Studio',
+  publisher: 'The Meta Studio',
+  metadataBase: new URL('https://themetastudio.com'),
+  alternates: {
+    canonical: '/services/social-media-marketing',
+  },
   openGraph: {
-    title: 'Social Media Marketing | The Meta Studio',
-    description: 'Build authentic connections and grow your brand through strategic social media marketing.',
-    images: ['/services/social-media-marketing/opengraph-image'],
+    title: 'Social Media Marketing Services - 300% Engagement Increase | The Meta Studio',
+    description: 'Grow your brand with expert social media marketing. 300% engagement increase across Facebook, Instagram, LinkedIn, and more.',
+    url: 'https://themetastudio.com/services/social-media-marketing',
+    siteName: 'The Meta Studio',
+    images: [
+      {
+        url: '/og-social-media.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Social Media Marketing Services',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
@@ -70,35 +111,24 @@ export default function SocialMediaMarketingPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
+      
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-background py-20 dark:from-pink-950/20 sm:py-28 lg:py-32">
+        {/* Modern Hero Section */}
+        <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-20 bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-gray-950 dark:via-gray-900 dark:to-purple-950/20">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Social Media{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  Marketing
-                </span>
+            <div className="mx-auto max-w-4xl text-center">
+              {/* Breadcrumb */}
+              <Breadcrumb 
+                items={[
+                  { label: "Services", href: "/#services" },
+                  { label: "Social Media Marketing" }
+                ]} 
+              />
+              
+              {/* Page Title */}
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                Social Media Marketing
               </h1>
-              <p className="mb-10 text-lg text-muted-foreground sm:text-xl">
-                The Meta Studio is your premier destination for advanced social media marketing solutions. 
-                Our expertise lies in harnessing the transformative power of social platforms for your 
-                business benefit. We adopt data-driven and strategic approaches to achieve remarkable results.
-              </p>
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button asChild size="lg">
-                  <Link href="/contact">
-                    Start Growing Today
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/portfolio">
-                    View Success Stories
-                  </Link>
-                </Button>
-              </div>
             </div>
           </div>
         </section>

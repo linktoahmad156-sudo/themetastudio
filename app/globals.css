@@ -168,3 +168,16 @@ body {
 .slide-in-from-right {
   animation: slideInFromRight 0.3s ease-out;
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}

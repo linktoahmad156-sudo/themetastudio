@@ -53,18 +53,18 @@ export function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-2xl bg-white/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
+              className="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-300 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/10 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-purple-500"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-secondary/50"
+                className="flex w-full items-center justify-between p-6 text-left transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 dark:hover:from-purple-900/10 dark:hover:to-indigo-900/10"
               >
                 <span className="text-lg font-semibold text-foreground">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
+                  className={`h-5 w-5 flex-shrink-0 transition-all duration-300 ${
+                    openIndex === index ? "rotate-180 text-purple-600" : "text-muted-foreground group-hover:text-purple-600"
                   }`}
                 />
               </button>

@@ -1,18 +1,59 @@
 import type { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Breadcrumb } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowRight, Search, BarChart, Link as LinkIcon, FileText } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: 'Search Engine Optimization',
-  description: 'Strategic SEO solutions that elevate your digital presence through comprehensive keyword research, on-page optimization, and authority building to drive organic growth.',
+  title: 'SEO Services - Search Engine Optimization Company | Rank #1 on Google',
+  description: 'Professional SEO services that get results. Increase organic traffic by 300% with our proven SEO strategies. Expert keyword research, on-page optimization, link building & technical SEO. Get Page 1 rankings on Google. Free SEO audit included.',
+  keywords: [
+    'SEO services',
+    'search engine optimization',
+    'SEO company',
+    'SEO agency',
+    'organic SEO',
+    'Google ranking',
+    'keyword research',
+    'on-page SEO',
+    'off-page SEO',
+    'technical SEO',
+    'link building',
+    'SEO audit',
+    'local SEO',
+    'SEO optimization',
+    'search engine marketing',
+    'SEO consultant',
+    'white hat SEO',
+    'SEO expert',
+    'page 1 google rankings',
+    'increase organic traffic'
+  ],
+  authors: [{ name: 'The Meta Studio' }],
+  creator: 'The Meta Studio',
+  publisher: 'The Meta Studio',
+  metadataBase: new URL('https://themetastudio.com'),
+  alternates: {
+    canonical: '/services/search-engine-optimization',
+  },
   openGraph: {
-    title: 'Search Engine Optimization | The Meta Studio',
-    description: 'Elevate your rankings with strategic SEO solutions tailored to your business goals.',
-    images: ['/services/search-engine-optimization/opengraph-image'],
+    title: 'Professional SEO Services - Rank #1 on Google | The Meta Studio',
+    description: 'Increase organic traffic by 300% with proven SEO strategies. Expert keyword research, technical SEO, and link building. Get Page 1 Google rankings.',
+    url: 'https://themetastudio.com/services/search-engine-optimization',
+    siteName: 'The Meta Studio',
+    images: [
+      {
+        url: '/og-seo-services.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'SEO Services - Search Engine Optimization Company',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
@@ -31,7 +72,7 @@ const seoServices = [
   {
     icon: FileText,
     title: "On-Page SEO",
-    description: "On-page SEO serves as a pivotal factor in accelerating business growth. By optimizing every website element—from keyword integration and meta tags to content quality and internal linking—we create an environment that search engines favor and users appreciate. This comprehensive approach not only elevates search rankings but also enhances user experience, reducing bounce rates and increasing meaningful engagement.",
+    description: "On-page SEO serves as a pivotal factor in accelerating business growth. By optimizing every website elementfrom keyword integration and meta tags to content quality and internal linkingwe create an environment that search engines favor and users appreciate. This comprehensive approach not only elevates search rankings but also enhances user experience, reducing bounce rates and increasing meaningful engagement.",
   },
   {
     icon: BarChart,
@@ -49,39 +90,24 @@ export default function SearchEngineOptimizationPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 pt-24">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-purple-50/50 via-background to-background py-20 dark:from-purple-950/20 sm:py-28 lg:py-32">
+      
+      <main className="flex-1">
+        {/* Modern Hero Section */}
+        <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-20 bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-gray-950 dark:via-gray-900 dark:to-purple-950/20">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 px-6 py-3 shadow-lg backdrop-blur-sm dark:from-purple-900/30 dark:to-indigo-900/30">
-                <Search className="h-4 w-4 text-purple-600" />
-                <span className="text-sm font-semibold text-purple-900 dark:text-purple-100">SEO Services</span>
-              </div>
-              <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Search Engine{" "}
-                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                  Optimization
-                </span>
+            <div className="mx-auto max-w-4xl text-center">
+              {/* Breadcrumb */}
+              <Breadcrumb 
+                items={[
+                  { label: "Services", href: "/#services" },
+                  { label: "Search Engine Optimization" }
+                ]} 
+              />
+              
+              {/* Page Title */}
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                Search Engine Optimization
               </h1>
-              <p className="mb-10 text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                The Meta Studio specializes in delivering innovative SEO solutions that help 
-                businesses reach remarkable digital heights. Through strategic SEO approaches, we 
-                empower your brand to achieve sustained organic growth and market leadership.
-              </p>
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in">
-                <Button asChild size="lg">
-                  <Link href="/contact">
-                    Get Started Today
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/portfolio">
-                    View Case Studies
-                  </Link>
-                </Button>
-              </div>
             </div>
           </div>
         </section>
@@ -126,7 +152,7 @@ export default function SearchEngineOptimizationPage() {
         {/* Why SEO Section */}
         <section className="bg-gradient-to-b from-background to-secondary/30 py-20 sm:py-24 lg:py-28">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <Card className="mx-auto max-w-4xl bg-white/80 backdrop-blur-sm p-8 shadow-xl sm:p-12">
+            <Card className="mx-auto max-w-4xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 shadow-xl sm:p-12">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 px-6 py-3 shadow-lg dark:from-purple-900/30 dark:to-indigo-900/30">
                 <BarChart className="h-4 w-4 text-purple-600" />
                 <span className="text-sm font-semibold text-purple-900 dark:text-purple-100">Why Choose SEO</span>
@@ -136,7 +162,7 @@ export default function SearchEngineOptimizationPage() {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
                 <p>
-                  In today's digital-first marketplace, search engine optimization isn't optional—it's 
+                  In today's digital-first marketplace, search engine optimization isn't optionalit's 
                   essential for business survival and growth. SEO ensures your business appears when 
                   potential customers are actively searching for your products or services, making it 
                   one of the most cost-effective marketing investments available.
@@ -177,10 +203,10 @@ export default function SearchEngineOptimizationPage() {
                 <p className="mb-8 text-lg leading-relaxed text-purple-100">
                   Let's develop an SEO strategy that delivers measurable results and sustainable growth.
                 </p>
-                <button className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-white px-10 text-base font-semibold text-purple-600 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <Link href="/contact" className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-white px-10 text-base font-semibold text-purple-600 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   Start Your SEO Journey
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                </Link>
               </div>
               
               {/* Decorative Elements */}
