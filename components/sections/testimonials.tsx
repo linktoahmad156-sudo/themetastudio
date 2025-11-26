@@ -17,7 +17,7 @@ const testimonials = [
     name: "Michael Chen",
     role: "Founder, EcoMarket",
     company: "EcoMarket",
-    content: "Working with The Meta Studio was a game-changer for our e-commerce business. They delivered a beautiful, high-performing platform that our customers love.",
+    content: "Working with The Meta Studio was a game-changer for our e-commerce business.&rdquo; They delivered a beautiful, high-performing platform that our customers love.",
     rating: 5,
     image: "MC",
     color: "from-blue-600 to-cyan-600"
@@ -26,7 +26,7 @@ const testimonials = [
     name: "Emily Rodriguez",
     role: "Marketing Director, FinTech Solutions",
     company: "FinTech Solutions",
-    content: "Their digital marketing strategies helped us reach our target audience effectively. Professional, creative, and results-driven - highly recommended!",
+    content: "Their digital marketing strategies helped us reach our target audience effectively. Professional, creative, and results.&rdquo;-driven - highly recommended!",
     rating: 5,
     image: "ER",
     color: "from-pink-600 to-rose-600"

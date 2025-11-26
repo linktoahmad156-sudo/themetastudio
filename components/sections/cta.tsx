@@ -14,13 +14,13 @@ export function CTASection() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex h-3 w-3 rounded-full bg-white"></span>
             </span>
-            <span className="text-sm font-semibold text-white">Let's Work Together</span>
+            <span className="text-sm font-semibold text-white">Let&apos;s Work Together</span>
           </div>
           <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ready to Transform Your Digital Presence?
+            Ready Let&apos;s Transform Your Digital Presence?
           </h2>
           <p className="mb-10 text-lg text-purple-100 sm:text-xl">
-            Let's collaborate to bring your vision to life. Get in touch with us today 
+            Let&apos;s collaborate to bring your vision to life. Get in touch with us today 
             and discover how we can help your business thrive in the digital world.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">

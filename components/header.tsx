@@ -4,8 +4,6 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { 
-  Menu, 
-  X, 
   ArrowRight, 
   Search, 
   TrendingUp, 
@@ -146,7 +144,6 @@ export const servicesData = [
 
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
   const [servicesOpen, setServicesOpen] = React.useState(false)
   const [isVisible, setIsVisible] = React.useState(true)
   const [lastScrollY, setLastScrollY] = React.useState(0)
@@ -181,9 +178,9 @@ export function Header() {
         <nav className="mx-auto mt-4 flex h-20 items-center rounded-full bg-white/95 px-6 shadow-lg backdrop-blur-3xl transition-all duration-300 hover:shadow-xl dark:bg-gray-900/95" style={{backdropFilter: 'blur(64px) saturate(180%)', WebkitBackdropFilter: 'blur(64px) saturate(180%)'}}>
           {/* Logo - Left */}
           <Link href="/" className="group flex items-center space-x-2.5 transition-transform duration-300 hover:scale-105">
-            <div className="relative h-14 w-14 flex-shrink-0">
+            <div className="relative h-20 w-35 flex-shrink-0">
               <Image 
-                src="/logo.webp" 
+                src="/the-meta-studio-logo.webp" 
                 alt="The Meta Studio Logo" 
                 fill
                 className="object-contain"

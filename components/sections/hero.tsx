@@ -24,7 +24,7 @@ export function HeroSection() {
           
           {/* Subheading */}
           <p className="mb-10 text-lg leading-relaxed text-muted-foreground sm:text-xl lg:text-2xl animate-fade-in max-w-3xl mx-auto">
-            We don't just create campaignswe engineer growth. Partner with a digital marketing agency that delivers measurable ROI, transparent reporting, and strategies tailored to your success.
+            We don&apos;t just create campaignswe engineer growth. Partner with a digital marketing agency that delivers measurable ROI, transparent reporting, and strategies tailored to your success.
           </p>
           
           {/* Value Propositions - 3 Key Points */}

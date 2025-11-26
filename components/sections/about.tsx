@@ -10,7 +10,7 @@ const values = [
   {
     icon: Users,
     title: "Great Client Support",
-    description: "Dedicated support team ensuring your success with round-the-clock assistance and guidance.",
+    description: "You'll have a dedicated support team ensuring your success with round-the-clock assistance and guidance.",
   },
   {
     icon: Target,
@@ -37,7 +37,7 @@ export function AboutSection() {
             Digital Agency Transforming Businesses
           </h2>
           <p className="text-lg text-muted-foreground">
-            We are a well-structured digital agency that transcends conventional approaches, 
+            We're not just another digital marketing agency that transcends conventional approaches, 
             empowering you to reach unprecedented success in today's digital landscape. Our commitment 
             centers on elevating sales performance, amplifying customer connections, and converting 
             one-time buyers into lifelong brand enthusiasts.
@@ -88,7 +88,7 @@ export function AboutSection() {
               leads, and delivering exceptional return on investment.
             </p>
             <p className="text-muted-foreground">
-              Transparency and integrity define our operations. We provide comprehensive tracking portals 
+              Transparency and integrity define our operations. That's why we provide comprehensive tracking portals 
               that allow clients to monitor their website's performance evolution and witness measurable 
               progress in real-time, ensuring accountability at every step.
             </p>
