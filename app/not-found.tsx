@@ -36,11 +36,11 @@ export default function NotFound() {
                     Go Home
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-sm sm:text-base" onClick={() => window.history.back()}>
-                  <button>
+                <Button asChild size="lg" variant="outline" className="text-sm sm:text-base">
+                  <Link href="/">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Go Back
-                  </button>
+                    Back to Home
+                  </Link>
                 </Button>
               </div>
 
