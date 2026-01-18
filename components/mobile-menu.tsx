@@ -93,7 +93,7 @@ export function MobileMenu() {
                 >
                   <div className="relative h-14 w-14 flex-shrink-0">
                     <Image
-                      src="/logo.webp"
+                      src="/the-meta-studio-logo.webp"
                       alt="The Meta Studio Logo"
                       fill
                       className="object-contain"

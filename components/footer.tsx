@@ -48,7 +48,7 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 group">
               <div className="relative h-12 w-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                 <Image
-                  src="/logo.webp"
+                  src="/the-meta-studio-logo.webp"
                   alt="The Meta Studio Logo"
                   fill
                   className="object-contain"
