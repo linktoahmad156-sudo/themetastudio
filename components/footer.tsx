@@ -65,7 +65,7 @@ export function Footer() {
             <div className="mt-6 space-y-3">
               <div className="flex items-center text-sm text-muted-foreground">
                 <Mail className="mr-2 h-4 w-4" />
-                hello@themetastudio.com
+                info@themetastudio.com
               </div>
               <div className="flex items-center text-sm text-muted-foreground">
                 <Phone className="mr-2 h-4 w-4" />

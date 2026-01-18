@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'The Meta Studio <onboarding@resend.dev>', // Use your verified domain
-      to: [process.env.CONTACT_EMAIL || 'hello@themetastudio.com'],
+      to: [process.env.CONTACT_EMAIL || 'info@themetastudio.com'],
       replyTo: email,
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `

@@ -39,21 +39,21 @@ const workCategories = [
 
 const projectHighlights = [
   {
-    image: "/placeholder-dashboard.jpg",
+    image: "/saas-dashboard-redesign.png",
     title: "SaaS Dashboard Redesign",
     category: "UI/UX Design",
     results: "45% increase in user engagement",
     tags: ["Design", "Analytics", "SaaS"]
   },
   {
-    image: "/placeholder-seo.jpg",
+    image: "/seo-results-dashboard.png",
     title: "SEO Results Dashboard",
     category: "Search Optimization",
     results: "320% organic traffic growth",
     tags: ["SEO", "Analytics", "Growth"]
   },
   {
-    image: "/placeholder-ecommerce.jpg",
+    image: "/ecommerce-platform.png",
     title: "E-commerce Platform",
     category: "Development",
     results: "$2.5M in additional revenue",
@@ -118,12 +118,15 @@ export function OurWorkSection() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projectHighlights.map((project, index) => (
               <Card key={index} className="group overflow-hidden border border-gray-200 bg-white transition-all duration-300 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/10 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-purple-500">
-                {/* Image Placeholder */}
+                {/* Project Image */}
                 <div className="relative h-48 overflow-hidden bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/20 dark:to-indigo-900/20">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Zap className="h-16 w-16 text-purple-600/30 dark:text-purple-400/30" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-purple-900 backdrop-blur-sm">
                       {project.category}

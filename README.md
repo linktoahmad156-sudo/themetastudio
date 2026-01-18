@@ -164,7 +164,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📧 Contact
 
-For questions or support, contact: hello@themetastudio.com
+For questions or support, contact: info@themetastudio.com
 
 ---
 

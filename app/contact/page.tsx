@@ -10,7 +10,7 @@ import { Mail, Phone, MapPin, Send, Clock, MessageSquare, HelpCircle } from "luc
 
 export const metadata: Metadata = {
   title: 'Contact Us - Get Free Consultation | The Meta Studio Digital Marketing',
-  description: 'Contact The Meta Studio for a free digital marketing consultation. Get expert advice on SEO, Google Ads, Social Media Marketing, and PPC. We respond within 24 hours. Call +44 7359 490149 or email hello@themetastudio.com',
+  description: 'Contact The Meta Studio for a free digital marketing consultation. Get expert advice on SEO, Google Ads, Social Media Marketing, and PPC. We respond within 24 hours. Call +44 7359 490149 or email info@themetastudio.com',
   keywords: [
     'contact digital marketing agency',
     'free marketing consultation',
@@ -111,8 +111,8 @@ export default function ContactPage() {
                   <p className="mb-4 text-sm text-muted-foreground">
                     Send us an email anytime!
                   </p>
-                  <a href="mailto:hello@themetastudio.com" className="text-sm font-semibold text-primary hover:underline break-all">
-                    hello@themetastudio.com
+                  <a href="mailto:info@themetastudio.com" className="text-sm font-semibold text-primary hover:underline break-all">
+                    info@themetastudio.com
                   </a>
                 </CardContent>
               </Card>
