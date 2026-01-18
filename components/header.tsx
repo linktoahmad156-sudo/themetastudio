@@ -3,13 +3,13 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { 
-  ArrowRight, 
-  Search, 
-  TrendingUp, 
-  Sparkles, 
-  Smartphone, 
-  Palette, 
+import {
+  ArrowRight,
+  Search,
+  TrendingUp,
+  Sparkles,
+  Smartphone,
+  Palette,
   ShoppingCart,
   Users,
   Briefcase,
@@ -175,13 +175,13 @@ export function Header() {
       isVisible ? "translate-y-0" : "-translate-y-full"
     )}>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="mx-auto mt-4 flex h-20 items-center rounded-full bg-white/95 px-6 shadow-lg backdrop-blur-3xl transition-all duration-300 hover:shadow-xl dark:bg-gray-900/95" style={{backdropFilter: 'blur(64px) saturate(180%)', WebkitBackdropFilter: 'blur(64px) saturate(180%)'}}>
+        <nav className="mx-auto mt-4 flex h-20 items-center rounded-full bg-white/95 px-6 shadow-lg backdrop-blur-3xl transition-all duration-300 hover:shadow-xl dark:bg-gray-900/95" style={{ backdropFilter: 'blur(64px) saturate(180%)', WebkitBackdropFilter: 'blur(64px) saturate(180%)' }}>
           {/* Logo - Left */}
           <Link href="/" className="group flex items-center space-x-2.5 transition-transform duration-300 hover:scale-105">
             <div className="relative h-20 w-35 flex-shrink-0">
-              <Image 
-                src="/the-meta-studio-logo.webp" 
-                alt="The Meta Studio Logo" 
+              <Image
+                src="/the-meta-studio-logo.webp"
+                alt="The Meta Studio Logo"
                 fill
                 className="object-contain"
                 priority
@@ -194,9 +194,9 @@ export function Header() {
             <Link href="/" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-accent">
               Home
             </Link>
-            
+
             {/* Services Mega Menu */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => {
                 if (closeTimeoutRef.current) {
@@ -213,9 +213,9 @@ export function Header() {
               <button className="px-4 py-2  text-sm font-medium text-foreground hover:text-primary transition-colors rounded-full hover:bg-accent">
                 Services
               </button>
-              
+
               {servicesOpen && (
-                <div 
+                <div
                   className="fixed left-0 right-0 top-[68px] z-50 animate-in fade-in slide-in-from-top-5 duration-200"
                   onMouseEnter={() => {
                     if (closeTimeoutRef.current) {
@@ -230,7 +230,7 @@ export function Header() {
                   }}
                 >
                   <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-2">
-                    <div className="rounded-3xl bg-white/98 p-6 shadow-2xl backdrop-blur-3xl border border-gray-200 dark:bg-gray-900/98 dark:border-gray-700" style={{backdropFilter: 'blur(64px) saturate(180%)', WebkitBackdropFilter: 'blur(64px) saturate(180%)'}}>
+                    <div className="rounded-3xl bg-white/98 p-6 shadow-2xl backdrop-blur-3xl border border-gray-200 dark:bg-gray-900/98 dark:border-gray-700" style={{ backdropFilter: 'blur(64px) saturate(180%)', WebkitBackdropFilter: 'blur(64px) saturate(180%)' }}>
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                         {servicesData.map((category) => (
                           <div key={category.category} className="min-w-0">
@@ -267,7 +267,7 @@ export function Header() {
                           </div>
                         ))}
                       </div>
-                      
+
                       {/* View All Services CTA */}
                       <div className="mt-6 pt-6 border-t border-border/50">
                         <Link
@@ -297,9 +297,9 @@ export function Header() {
 
           {/* Right Actions */}
           <div className="hidden items-center gap-3 lg:flex">
-            <a href="tel:+1234567890" className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a href="tel:+447359490149" className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
               <Phone className="h-4 w-4" />
-              <span className="hidden xl:inline">+1 (555) 123-4567</span>
+              <span className="hidden xl:inline">+44 7359 490149</span>
             </a>
             <Button asChild size="default" className="group rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700">
               <Link href="/contact">

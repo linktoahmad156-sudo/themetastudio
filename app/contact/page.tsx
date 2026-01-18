@@ -10,7 +10,7 @@ import { Mail, Phone, MapPin, Send, Clock, MessageSquare, HelpCircle } from "luc
 
 export const metadata: Metadata = {
   title: 'Contact Us - Get Free Consultation | The Meta Studio Digital Marketing',
-  description: 'Contact The Meta Studio for a free digital marketing consultation. Get expert advice on SEO, Google Ads, Social Media Marketing, and PPC. We respond within 24 hours. Call +1 (555) 123-4567 or email hello@themetastudio.com',
+  description: 'Contact The Meta Studio for a free digital marketing consultation. Get expert advice on SEO, Google Ads, Social Media Marketing, and PPC. We respond within 24 hours. Call +44 7359 490149 or email hello@themetastudio.com',
   keywords: [
     'contact digital marketing agency',
     'free marketing consultation',
@@ -69,7 +69,7 @@ export default function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Modern Hero Section */}
         <section className="relative pt-24 sm:pt-28 pb-16 sm:pb-20 bg-gradient-to-br from-purple-50 via-white to-indigo-50 dark:from-gray-950 dark:via-gray-900 dark:to-purple-950/20">
@@ -77,7 +77,7 @@ export default function ContactPage() {
             <div className="mx-auto max-w-4xl text-center">
               {/* Breadcrumb */}
               <Breadcrumb items={[{ label: "Contact Us" }]} />
-              
+
               {/* Page Title */}
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 Contact Us
@@ -126,8 +126,8 @@ export default function ContactPage() {
                   <p className="mb-4 text-sm text-muted-foreground">
                     Mon-Fri from 9am to 6pm
                   </p>
-                  <a href="tel:+15551234567" className="text-sm font-semibold text-primary hover:underline">
-                    +1 (555) 123-4567
+                  <a href="tel:+447359490149" className="text-sm font-semibold text-primary hover:underline">
+                    +44 7359 490149
                   </a>
                 </CardContent>
               </Card>

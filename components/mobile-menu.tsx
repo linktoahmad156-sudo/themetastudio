@@ -39,7 +39,7 @@ export function MobileMenu() {
       document.body.style.top = ''
       window.scrollTo(0, parseInt(scrollY || '0') * -1)
     }
-    
+
     return () => {
       document.body.style.overflow = ''
       document.body.style.position = ''
@@ -194,11 +194,11 @@ export function MobileMenu() {
                         </Link>
                       </Button>
                       <a
-                        href="tel:+15551234567"
+                        href="tel:+447359490149"
                         className="flex items-center justify-center gap-2 rounded-full border-2 border-purple-600 px-6 py-2.5 text-sm font-semibold text-purple-600 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/20"
                       >
                         <Phone className="h-4 w-4" />
-                        Call Now: +1 (555) 123-4567
+                        Call Now: +44 7359 490149
                       </a>
                     </div>
                   </div>

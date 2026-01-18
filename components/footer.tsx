@@ -47,9 +47,9 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-3 group">
               <div className="relative h-12 w-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-                <Image 
-                  src="/logo.webp" 
-                  alt="The Meta Studio Logo" 
+                <Image
+                  src="/logo.webp"
+                  alt="The Meta Studio Logo"
                   fill
                   className="object-contain"
                 />
@@ -59,7 +59,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Transforming ideas into digital reality. We craft exceptional digital 
+              Transforming ideas into digital reality. We craft exceptional digital
               experiences that drive results and create lasting impact.
             </p>
             <div className="mt-6 space-y-3">
@@ -69,7 +69,7 @@ export function Footer() {
               </div>
               <div className="flex items-center text-sm text-muted-foreground">
                 <Phone className="mr-2 h-4 w-4" />
-                +1 (555) 123-4567
+                +44 7359 490149
               </div>
               <div className="flex items-center text-sm text-muted-foreground">
                 <MapPin className="mr-2 h-4 w-4" />

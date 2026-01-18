@@ -139,7 +139,7 @@ export function ContactForm() {
                 id="phone"
                 name="phone"
                 className="w-full rounded-xl border-2 border-input bg-background px-4 py-3 text-sm transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                placeholder="+1 (555) 123-4567"
+                placeholder="+44 7359 490149"
                 disabled={isSubmitting}
               />
             </div>
@@ -187,9 +187,9 @@ export function ContactForm() {
             />
           </div>
 
-          <Button 
-            type="submit" 
-            size="lg" 
+          <Button
+            type="submit"
+            size="lg"
             className="w-full group text-base h-14"
             disabled={isSubmitting}
           >
